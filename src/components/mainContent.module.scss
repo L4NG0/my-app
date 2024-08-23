@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+:root {
+    --bgc-main: #2C2C2C;
+    // --color: #FF9950;
+    // --accent: #F4BD50;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #4e5e72;
+}
+
+
+
+.main_description {
+    margin-top: 5%;
+    width: 60%;
+
+    h1 {
+        font-family: "Oswald", sans-serif;
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+        margin-right: 20%;
+        margin-top: 6%;
+    }
+}
+
+.buttons {
+    width: 35%;
+    height: 80vh;
+    margin: 2%;
+    top: 15vh;
+    right: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    overflow-y: hidden;
+
+    &__element {
+        color: black;
+        width: 100%;
+        height: 26.3vh;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 0;
+            transition: opacity 3s ease-in-out;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        & .label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-family: "Oswald", sans-serif;
+            font-size: 15px;
+            letter-spacing: 3px;
+            opacity: 0;
+            z-index: 2;
+            background-color: rgba(22, 160, 133, .5);
+            transform: scale(3);
+            color: white;
+        }
+
+        &:nth-child(2) img {
+            top: -100%;
+        }
+
+        &:nth-child(3) img {
+            top: -200%;
+        }
+
+        &:hover .label {
+            animation: toggleLabelVisibility 1.5s 1;
+            opacity: .9;
+        }
+
+    }
+
+
+
+    @keyframes toggleLabelVisibility {
+
+        0% {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: .9;
+        }
+
+    }
+
+
+}
+
+@media (max-width: 1281px) {
+    .navi li {
+        font-size: .7rem;
+        letter-spacing: .2rem;
+    }
+}
+
+@media (max-width: 1025px) {
+    .navi li {
+        font-size: .5rem;
+        letter-spacing: .1rem;
+        font-weight: 400;
+    }
+}
+
+.template_container {
+    background-color: #fff;
+    position: relative;
+    width: 80%;
+    height: 90vh;
+    top: 10vh;
+    left: 10%;
+    transform: translateZ(0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.viewport {
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    overflow-y: scroll;
+}
+
+.viewport::-webkit-scrollbar {
+    width: 10px;
+}
+
+.viewport::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.viewport::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, rgba(22, 160, 133, .6));
+    border-radius: 8px;
+    cursor: pointer;
+    height: 20%;
+}
+
+.viewport::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #16a085 50%);
+}
+
+div.arrow {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    display: none;
+
+    &.visible {
+        display: block;
+
+        svg:hover {
+            transform: scale(1.1) translateX(3%);
+        }
+
+        svg:hover #light {
+            animation: arrow 1s .2s ease-in-out infinite;
+        }
+    }
+}
+
+.left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: auto;
+    transform: rotate(180deg);
+    display: none;
+
+    &.visible {
+        display: block;
+
+        svg:hover {
+            transform: scale(1.1) translateX(3%);
+        }
+
+        svg:hover #light {
+            animation: arrow 1s .3s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes arrow {
+    0% {}
+
+    100% {
+        transform: translateX(13%);
+        opacity: .4;
+    }
+}
+
+.about-us {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__container {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        & h1 {
+            width: 100%;
+        }
+    }
+
+    &__img {}
+}
+
+footer {
+    display: none;
+}
+
+#main-contact {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 5%;
+    height: 50vh;
+
+    & div {
+        // background-color: var(--bgc-main);
+        // background-color: #000;
+        opacity: .8;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    &:hover div {
+        animation: aside 2s linear;
+    }
+}

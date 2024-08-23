@@ -1,0 +1,6 @@
+import './jquery.min.js'
+// import './load-template.js'
+import './jquery.easing.1.3.js'
+import './bootstrap.min.js'
+// import './custom-scripts.js'
+// import './template2.js'

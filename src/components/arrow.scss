@@ -1,0 +1,38 @@
+div.arrow {
+    position: absolute;
+    right: -15%;
+    top: 50%;
+
+    svg:hover {
+        transform: scale(1.1) translateX(3%);
+    }
+
+    svg:hover #light {
+        animation: arrow 1s .2s ease-in-out infinite;
+    }
+}
+
+.left {
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    right: auto;
+    transform: rotate(180deg);
+
+    svg:hover {
+        transform: scale(1.1) translateX(3%);
+    }
+
+    svg:hover #light {
+        animation: arrow 1s .3s ease-in-out infinite;
+    }
+}
+
+@keyframes arrow {
+    0% {}
+
+    100% {
+        transform: translateX(13%);
+        opacity: .4;
+    }
+}

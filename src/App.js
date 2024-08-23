@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navigation from './components/Navigation.js';
+import MainContent from './components/MainContent.js';
+import Template from './components/Template.js';
+import About from './components/About.js';
+import Contact from './components/Contact.js';
 
-function App() {
+//zakładka szablony, 3 miniaturki szablonów
+
+const App = () => {
+  const [template, setTemplate] = useState('');
+
+  const handleButtonClick = (template) => {
+    setTemplate(template);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <Navigation />
       </header>
+      <main>
+        {/* <MainContent template={template} handleButtonClick={handleButtonClick} /> */}
+        <Template />
+        {/* <About /> */}
+        {/* <Contact /> */}
+      </main>
+      <footer>
+      </footer>
     </div>
   );
 }
